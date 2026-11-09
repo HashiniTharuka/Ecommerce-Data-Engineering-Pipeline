@@ -1,0 +1,77 @@
+PROJECT: E-commerce Data Pipeline
+
+PHASE 2 – STEP 14
+COMMON COPY ACTIVITY SETTINGS & VALIDATION PLAN
+
+1. COMMON SETTINGS
+
+Apply these proposed settings to:
+
+- Copy_Orders
+- Copy_Customers
+- Copy_Products
+
+Retry Count: 3
+Retry Interval: 30 seconds
+Timeout: 1 hour
+
+Fault Tolerance:
+- Do not skip incompatible or invalid rows silently.
+- Investigate unexpected data errors.
+
+Logging:
+- Enable session logging where supported.
+
+Data Consistency Verification:
+- Planned, subject to connector and activity support.
+
+2. DATA VALIDATION PLAN
+
+After pipeline execution, validate the following:
+
+Orders:
+Source: cleaned_orders.csv
+Expected Rows: 8
+Checks:
+- No duplicate order_id values.
+- No invalid order dates.
+- No negative quantity or amount values.
+
+Customers:
+Source: cleaned_customers.csv
+Expected Rows: 8
+Checks:
+- No missing customer_id values.
+- No missing email values.
+- Unknown email value is allowed for customer_id 507.
+
+Products:
+Source: products.csv
+Expected Rows: To be verified from source file.
+Checks:
+- No duplicate product_id values.
+- Product prices should be valid.
+- Product names and categories should not be missing.
+
+3. SOURCE AND SINK VALIDATION
+
+After actual ADF execution:
+
+- Compare source and destination row counts.
+- Verify destination files exist.
+- Verify column names and data types.
+- Investigate any mismatch.
+- Review ADF Monitor execution logs.
+
+4. EXPECTED RESULT
+
+All three datasets should be copied successfully to their respective ADLS folders.
+
+5. PROJECT STATUS
+
+Common Settings Design: Completed
+Validation Plan: Completed
+Actual ADF Execution: Pending
+Azure Deployment: Pending (Subscription Disabled)
+
+END OF DOCUMENT

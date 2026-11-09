@@ -1,0 +1,43 @@
+# Data Quality Report – E-commerce Data Pipeline
+
+## 1. Project Overview
+Project: E-commerce Data Pipeline  
+Phase: 1 – Data Understanding and Preparation  
+Technology: Python 3.10.11, Pandas 2.3.3
+
+## 2. Source Datasets
+- orders.csv
+- customers.csv
+- products.csv
+
+## 3. Data Quality Issues Identified
+
+| Issue | Dataset | Action Taken |
+|---|---|---|
+| Duplicate Order ID | Orders | Kept first occurrence |
+| Invalid date | Orders | Removed invalid record |
+| Negative quantity | Orders | Removed invalid record |
+| Negative amount | Orders | Removed invalid record |
+| Missing email | Customers | Replaced with Unknown |
+
+## 4. Final Validation Results
+
+### Orders
+- Original records: 11
+- Cleaned records: 8
+- Duplicate IDs: 0
+- Invalid dates: 0
+- Negative quantities: 0
+- Negative amounts: 0
+
+### Customers
+- Total records: 8
+- Missing emails: 0
+- Unknown emails: 1
+
+## 5. Output Files
+- processed/cleaned_orders.csv
+- processed/cleaned_customers.csv
+
+## 6. Conclusion
+Successfully implemented a basic data-cleaning process using Python and Pandas. The cleaned datasets passed the defined validation checks.

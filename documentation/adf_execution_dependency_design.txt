@@ -1,0 +1,87 @@
+PROJECT: E-commerce Data Pipeline
+
+PHASE 2 – STEP 9
+PIPELINE EXECUTION ORDER & DEPENDENCY DESIGN
+
+1. PIPELINE DETAILS
+
+Pipeline Name: PL_Ecommerce_Data_Load
+
+Purpose:
+To copy E-commerce data files from the local source folder to Azure Data Lake Storage Gen2 using Azure Data Factory Copy Activities.
+
+2. SOURCE FILES
+
+Activity 1: Copy_Orders
+Source File: cleaned_orders.csv
+Source Dataset: DS_Orders_Source
+Sink Dataset: DS_Orders_Sink
+Destination Folder: processed/orders/
+
+Activity 2: Copy_Customers
+Source File: cleaned_customers.csv
+Source Dataset: DS_Customers_Source
+Sink Dataset: DS_Customers_Sink
+Destination Folder: processed/customers/
+
+Activity 3: Copy_Products
+Source File: products.csv
+Source Dataset: DS_Products_Source
+Sink Dataset: DS_Products_Sink
+Destination Folder: processed/products/
+
+3. EXECUTION STRATEGY
+
+Execution Type: Parallel Execution
+
+All three Copy Activities are independent.
+Therefore, they can execute simultaneously without waiting for one another.
+
+4. ACTIVITY DEPENDENCIES
+
+Copy_Orders:
+- No predecessor activity.
+- Can start independently.
+
+Copy_Customers:
+- No predecessor activity.
+- Can start independently.
+
+Copy_Products:
+- No predecessor activity.
+- Can start independently.
+
+Dependency Condition:
+No dependencies between the three Copy Activities.
+
+5. FUTURE VALIDATION ACTIVITY
+
+A future validation activity can be added after the three Copy Activities.
+
+It should execute only when all three Copy Activities complete successfully.
+
+Dependency Conditions:
+- Copy_Orders: Succeeded
+- Copy_Customers: Succeeded
+- Copy_Products: Succeeded
+
+6. ERROR HANDLING
+
+If a Copy Activity fails:
+- ADF Monitor can be used to identify the failed activity.
+- Review the activity error message.
+- Check source file availability and destination configuration.
+- Correct the issue and rerun the pipeline.
+
+7. EXPECTED RESULT
+
+All three source files should be copied to their respective destination folders in Azure Data Lake Storage Gen2.
+
+8. PROJECT STATUS
+
+Pipeline Execution Design: Completed
+Dependency Design: Completed
+Actual ADF Pipeline Deployment: Pending
+Reason: Azure subscription is currently disabled.
+
+END OF DOCUMENT

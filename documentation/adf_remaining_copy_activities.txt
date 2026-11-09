@@ -1,0 +1,41 @@
+
+PROJECT: E-commerce Data Pipeline
+
+PHASE 2 - STEP 7
+REMAINING COPY ACTIVITIES
+
+ACTIVITY 2: Copy_Customers
+
+Source Dataset: DS_Customers_Source
+Source File: cleaned_customers.csv
+Sink Dataset: DS_Customers_Sink
+Destination: processed/customers/
+Format: CSV
+Header: Yes
+
+Column Mapping:
+customer_id -> customer_id
+name        -> name
+email       -> email
+city        -> city
+
+
+ACTIVITY 3: Copy_Products
+
+Source Dataset: DS_Products_Source
+Source File: cleaned_products.csv
+Sink Dataset: DS_Products_Sink
+Destination: processed/products/
+Format: CSV
+Header: Yes
+
+Column Mapping:
+product_id   -> product_id
+product_name -> product_name
+category     -> category
+price_lkr    -> price_lkr
+
+
+STATUS:
+Design Completed
+Actual Azure Deployment: Pending

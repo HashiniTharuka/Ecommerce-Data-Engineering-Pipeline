@@ -1,0 +1,41 @@
+
+PROJECT: E-commerce Data Pipeline
+
+PHASE 2 - STEP 6
+COPY ACTIVITY CONFIGURATION
+
+Activity Name:
+Copy_Orders
+
+ACTIVITY TYPE:
+Copy Data
+
+SOURCE:
+Linked Service: LS_FileSystem_Source
+Dataset: DS_Orders_Source
+File: cleaned_orders.csv
+Format: CSV
+First Row as Header: Yes
+
+SINK:
+Linked Service: LS_ADLS_Destination
+Dataset: DS_Orders_Sink
+Destination Folder: processed/orders/
+Format: CSV
+
+COLUMN MAPPING:
+order_id       -> order_id
+customer_id    -> customer_id
+product_id     -> product_id
+quantity       -> quantity
+amount_lkr     -> amount_lkr
+order_date     -> order_date
+
+SETTINGS:
+Fault Tolerance: Default
+Data Consistency Verification: Planned
+Logging: Planned
+
+STATUS:
+Configuration Designed
+Actual Azure Deployment: Pending

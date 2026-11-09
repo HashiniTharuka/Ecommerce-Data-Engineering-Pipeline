@@ -1,0 +1,49 @@
+PROJECT: E-commerce Data Pipeline
+
+PHASE 2 – STEP 11
+COPY ORDERS - PERFORMANCE & RELIABILITY SETTINGS
+
+1. RETRY
+
+Retry Count: 3
+Retry Interval: 30 seconds
+
+Purpose:
+Retry the activity automatically when a temporary error occurs.
+
+2. TIMEOUT
+
+Timeout: 1 hour
+
+Purpose:
+Stop the activity if it exceeds the configured execution time.
+
+3. FAULT TOLERANCE
+
+Default Fault Tolerance: Enabled only if explicitly configured.
+
+For this project:
+Do not skip incompatible or invalid rows silently.
+Treat unexpected data errors as failures and investigate them.
+
+4. DATA CONSISTENCY VERIFICATION
+
+Planned: Enable Data Consistency Verification where supported by the selected connector and Copy Activity configuration.
+
+Purpose:
+Help verify that copied data is consistent between source and destination.
+
+5. LOGGING
+
+Planned: Enable session logging where supported.
+
+Purpose:
+Keep execution details to help investigate Copy Activity failures.
+
+6. PROJECT STATUS
+
+Settings Design: Completed
+Actual ADF Configuration: Pending
+Actual Pipeline Execution: Pending
+
+END OF DOCUMENT

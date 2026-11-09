@@ -1,0 +1,46 @@
+
+PROJECT: E-commerce Data Pipeline
+
+PHASE 2 - STEP 5
+PIPELINE DESIGN
+
+Pipeline Name:
+PL_Ecommerce_Data_Load
+
+OBJECTIVE:
+Copy cleaned CSV files from the Windows
+processed folder to Azure Data Lake Storage Gen2.
+
+SOURCE PATH:
+E:\Data Engineering\DataEngineeringProject\Phase1_Data\processed
+
+SOURCE FILES:
+1. cleaned_orders.csv
+2. cleaned_customers.csv
+3. cleaned_products.csv
+
+ACTIVITIES:
+
+1. Copy_Orders
+   Source: cleaned_orders.csv
+   Destination: processed/orders/
+
+2. Copy_Customers
+   Source: cleaned_customers.csv
+   Destination: processed/customers/
+
+3. Copy_Products
+   Source: cleaned_products.csv
+   Destination: processed/products/
+
+SOURCE LINKED SERVICE:
+LS_FileSystem_Source
+
+DESTINATION LINKED SERVICE:
+LS_ADLS_Destination
+
+EXECUTION ORDER:
+Copy activities execute within the pipeline.
+
+IMPLEMENTATION STATUS:
+Designed - Azure deployment pending.

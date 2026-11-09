@@ -1,0 +1,59 @@
+PROJECT: E-commerce Data Pipeline
+
+PHASE 3 – INCIDENT MANAGEMENT
+INCIDENT RCA CASE 01
+
+1. INCIDENT DETAILS
+
+Incident ID: INC-001
+Incident Type: Pipeline Execution Failure
+Error Type: FileNotFoundError
+Severity: Low (Simulation)
+Environment: Local Python Monitoring Simulation
+
+2. INCIDENT DESCRIPTION
+
+The pipeline monitoring test attempted to access a source CSV file that did not exist at the specified path.
+
+3. ROOT CAUSE
+
+The configured source file path was incorrect or the source file was unavailable.
+
+4. IMPACT
+
+The affected dataset could not be loaded.
+No existing source data was modified.
+
+5. TROUBLESHOOTING
+
+L1:
+- Identify the failed execution.
+- Capture the error message.
+- Report the issue.
+
+L2:
+- Check the source file path.
+- Verify file availability and permissions.
+- Review the configuration.
+
+L3:
+- Identify the underlying configuration or file management issue.
+- Recommend path validation and pre-execution file checks.
+- Implement preventive controls.
+
+6. RESOLUTION
+
+Verify the source path and ensure the required file is available before execution.
+
+7. PREVENTION
+
+Implement source file existence checks before pipeline execution.
+
+8. INCIDENT STATUS
+
+Simulation: Completed
+Real Production Incident: Not applicable
+Resolution: Documented
+Azure Deployment: Pending
+
+END OF INCIDENT REPORT

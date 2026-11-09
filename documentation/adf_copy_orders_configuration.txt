@@ -1,0 +1,43 @@
+PROJECT: E-commerce Data Pipeline
+
+PHASE 2 – STEP 10
+COPY ORDERS ACTIVITY CONFIGURATION
+
+1. GENERAL TAB
+
+Activity Name: Copy_Orders
+Activity Type: Copy Data
+Description: Copy cleaned orders data to ADLS.
+
+2. SOURCE TAB
+
+Source Dataset: DS_Orders_Source
+Source File: cleaned_orders.csv
+File Format: CSV
+First Row as Header: Yes
+
+3. SINK TAB
+
+Sink Dataset: DS_Orders_Sink
+Destination Folder: processed/orders/
+File Format: CSV
+First Row as Header: Yes
+
+4. MAPPING TAB
+
+Source Column       Destination Column
+
+order_id            order_id
+customer_id         customer_id
+product_id          product_id
+quantity            quantity
+amount_lkr          amount_lkr
+order_date          order_date
+
+5. CONFIGURATION STATUS
+
+Copy Activity Design: Completed
+Actual ADF Configuration: Pending
+Azure Deployment: Pending (Subscription Disabled)
+
+END OF DOCUMENT

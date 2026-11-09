@@ -1,0 +1,70 @@
+PROJECT: E-commerce Data Pipeline
+
+PHASE 2 – ADF PIPELINE DESIGN
+
+1. PIPELINE DETAILS
+
+Pipeline Name: PL_Ecommerce_Data_Load
+
+Purpose:
+Copy E-commerce Orders, Customers and Products data from local CSV files to Azure Data Lake Storage Gen2.
+
+2. SOURCE AND DESTINATION
+
+ACTIVITY 1: Copy_Orders
+Source: processed/cleaned_orders.csv
+Source Dataset: DS_Orders_Source
+Sink Dataset: DS_Orders_Sink
+Destination: processed/orders/orders.csv
+
+ACTIVITY 2: Copy_Customers
+Source: processed/cleaned_customers.csv
+Source Dataset: DS_Customers_Source
+Sink Dataset: DS_Customers_Sink
+Destination: processed/customers/customers.csv
+
+ACTIVITY 3: Copy_Products
+Source: products.csv
+Source Dataset: DS_Products_Source
+Sink Dataset: DS_Products_Sink
+Destination: processed/products/products.csv
+
+3. EXECUTION STRATEGY
+
+Execution Type: Parallel
+
+All three Copy Activities are independent.
+No predecessor dependencies are required.
+
+4. ACTIVITY CONFIGURATION
+
+Activity Type: Copy Data
+File Format: CSV
+First Row as Header: Yes
+
+Retry Count: 3
+Retry Interval: 30 seconds
+Timeout: 1 hour
+
+5. FUTURE VALIDATION
+
+After all three Copy Activities succeed:
+- Validate destination files.
+- Compare source and destination row counts.
+- Verify column names and data quality.
+- Review execution logs in ADF Monitor.
+
+6. LINKED SERVICES
+
+Source: LS_FileSystem_Source
+Destination: LS_ADLS_Destination
+
+7. PROJECT STATUS
+
+Pipeline Design: Completed
+Dataset Design: Completed
+Copy Activity Design: Completed
+Actual Azure Deployment: Pending
+Reason: Azure Subscription Disabled
+
+END OF DOCUMENT

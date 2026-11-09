@@ -1,0 +1,38 @@
+PROJECT: E-commerce Data Pipeline
+
+PHASE 2 – STEP 15
+SOURCE PATH CONFIGURATION
+
+1. SOURCE LINKED SERVICE
+
+Linked Service Name: LS_FileSystem_Source
+Source Root Folder:
+E:\Data Engineering\DataEngineeringProject\Phase1_Data
+
+2. SOURCE DATASET FILE PATHS
+
+Dataset: DS_Orders_Source
+Relative File Path: processed/cleaned_orders.csv
+
+Dataset: DS_Customers_Source
+Relative File Path: processed/cleaned_customers.csv
+
+Dataset: DS_Products_Source
+Relative File Path: products.csv
+
+3. IMPORTANT CONFIGURATION NOTES
+
+- All source paths are relative to the Phase1_Data root folder.
+- Orders and Customers use cleaned CSV files.
+- Products uses the original products.csv file.
+- CSV files contain a header row.
+- Actual File System connector configuration is pending.
+
+4. PROJECT STATUS
+
+Source File Locations: Verified
+Source Path Design: Completed
+Actual ADF Linked Service: Pending
+Azure Deployment: Pending (Subscription Disabled)
+
+END OF DOCUMENT

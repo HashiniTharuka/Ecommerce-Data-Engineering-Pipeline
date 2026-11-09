@@ -1,0 +1,23 @@
+E-COMMERCE PIPELINE MONITORING REPORT
+Execution Time: 2026-11-08 11:41:47.459825
+=============================================
+
+Dataset: Orders
+Status: SUCCESS
+Rows: 8
+Columns: ['order_id', 'customer_id', 'product_id', 'quantity', 'amount_lkr', 'order_date']
+Data Quality Issues: 0
+
+Dataset: Customers
+Status: SUCCESS
+Rows: 8
+Columns: ['customer_id', 'customer_name', 'email', 'city']
+Data Quality Issues: 0
+
+Dataset: Products
+Status: SUCCESS
+Rows: 5
+Columns: ['product_id', 'product_name', 'category', 'unit_price_lkr']
+Data Quality Issues: 0
+
+END OF REPORT
