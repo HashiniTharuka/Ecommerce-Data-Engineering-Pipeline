@@ -1,0 +1,20 @@
+# Environment variables and secrets
+.env
+**/.env
+
+# Airflow runtime files
+airflow/logs/
+airflow/config/
+airflow/plugins/__pycache__/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Temporary files
+*.tmp
+*.log
+
+# Local environment
+.venv/
+venv/
